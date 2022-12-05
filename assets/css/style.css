@@ -1,0 +1,62 @@
+body {
+    background-color: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    color: gold;
+}
+
+.card {
+    width: 370px;
+    height: 400px;
+    margin: 100px auto;
+    border-radius: 15px;
+    position: relative;
+    transition: background 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background-color: chartreuse;
+    color: #000;
+}
+
+.card h2 {
+    text-align: center;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.card table {
+    margin: 20px auto;
+}
+
+.card label {
+    font-weight: 600;
+
+}
+
+.card input {
+    padding: 5px 15px;
+    margin-top: 7px;
+}
+
+.kirim {
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    top: 300px;
+}
+
+.kirim button {
+    padding: 5px 7px;
+    font-weight: 800;
+    border-radius: 5px;
+    background-color: lightblue;
+}
