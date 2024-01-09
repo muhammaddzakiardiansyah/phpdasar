@@ -54,8 +54,8 @@ if (isset($_POST["cari"])) {
       <a href="logout.php" class="btn btn-danger">Logout</a>
     <?php endif; ?>
     <form class="d-flex justify-content-end" method="post">
-      <input type="search" placeholder="Cari siswa" aria-label="Search" name="keyword" autofocus autocomplete="off">
-      <button class="btn btn-outline-success" type="submit" name="cari">Cari!</button>
+      <input type="search" placeholder="Cari siswa" aria-label="Search" name="keyword" autofocus autocomplete="off" id="keyword">
+      <button class="btn btn-outline-success" type="submit" name="cari" id="btn-search">Cari!</button>
     </form>
     <?php if (!isset($_POST["keyword"])) : ?>
       <?php if ($halActive > 1) : ?>
@@ -73,35 +73,37 @@ if (isset($_POST["cari"])) {
       <?php endif; ?>
     <?php endif; ?>
     <a href="tambah.php" class="btn btn-primary mb-2">Tambah data siswa</a>
-    <table class="table table-hover table-striped-columns mt-3">
-      <thead class="bg-primary">
-        <th>No.</th>
-        <th>Profil</th>
-        <th>Aksi</th>
-        <th>Nama</th>
-        <th>Nis</th>
-        <th>Email</th>
-        <th>Jurusan</th>
-      </thead>
-      <?php $i = 1; ?>
-      <?php foreach ($siswa as $row) : ?>
-        <tbody>
-          <td><?= $i; ?></td>
-          <td><img src="assets/img/<?= $row["gambar"]; ?>" alt="profile"></td>
-          <td>
-            <a href="edit.php?id=<?= $row["id"]; ?>" class="btn btn-success">Edit</a> |
-            <a href="hapus.php?id=<?= $row["id"]; ?>" onclick=" return confirm('Anda yakin akan menghapus data ini?');" class="btn btn-danger">Hapus</a>
-          </td>
-          <td><?= $row["nama"]; ?></td>
-          <td><?= $row["nis"]; ?></td>
-          <td><?= $row["email"]; ?></td>
-          <td><?= $row["jurusan"]; ?></td>
-        </tbody>
-        <?php $i++; ?>
-      <?php endforeach; ?>
-    </table>
+    <div id="container">
+      <table class="table table-hover table-striped-columns mt-3">
+        <thead class="bg-primary">
+          <th>No.</th>
+          <th>Profil</th>
+          <th>Aksi</th>
+          <th>Nama</th>
+          <th>Nis</th>
+          <th>Email</th>
+          <th>Jurusan</th>
+        </thead>
+        <?php $i = 1; ?>
+        <?php foreach ($siswa as $row) : ?>
+          <tbody>
+            <td><?= $i; ?></td>
+            <td><img src="assets/img/<?= $row["gambar"]; ?>" alt="profile"></td>
+            <td>
+              <a href="edit.php?id=<?= $row["id"]; ?>" class="btn btn-success">Edit</a> |
+              <a href="hapus.php?id=<?= $row["id"]; ?>" onclick=" return confirm('Anda yakin akan menghapus data ini?');" class="btn btn-danger">Hapus</a>
+            </td>
+            <td><?= $row["nama"]; ?></td>
+            <td><?= $row["nis"]; ?></td>
+            <td><?= $row["email"]; ?></td>
+            <td><?= $row["jurusan"]; ?></td>
+          </tbody>
+          <?php $i++; ?>
+        <?php endforeach; ?>
+      </table>
+    </div>
   </div>
-
+  <script src="assets/js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 
