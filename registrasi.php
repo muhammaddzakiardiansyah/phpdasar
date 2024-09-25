@@ -25,7 +25,9 @@
     </div>
 
     <!-- Login Form -->
-    <div class="relative z-10 bg-white p-8 rounded-md shadow-lg">
+    <!-- <div class="relative z-10 bg-white py-8 px-16 rounded-md shadow-lg"> -->
+    <div class="relative z-10 bg-white p-8 max-w-sm w-full rounded-md shadow-lg">
+
         <h1 class="text-xl font-bold mb-4">Halaman Registrasi</h1>
         <?php
         if( isset($_POST["register"]) ) {
@@ -56,7 +58,7 @@
             <div class="mb-4">
                 <label class="block text-gray-700 font-bold mb-2" for="email">Username</label>
                 <input
-                    class="appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+                    class="appearance-none border rounded-md py-2 px-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
                     name="username" id="" type="text" placeholder="Username">
             </div>
             <div class="mb-4">
