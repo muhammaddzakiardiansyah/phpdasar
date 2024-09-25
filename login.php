@@ -97,6 +97,10 @@ if( isset($_POST["login"]) ) {
                     class="appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
                     name="password" id="password" type="password" placeholder="Password">
             </div>
+            <div class="mb-4">
+                <label class="text-gray-700 font-bold mb-2" for="checkbox">Remember me?</label>
+                <input type="checkbox" name="checkbox" id="checkbox">
+            </div>
             <div class="flex items-center justify-between gap-8">
                 <button
                     class="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
