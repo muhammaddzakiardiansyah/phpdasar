@@ -61,6 +61,7 @@ if( isset($_POST["login"]) ) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <div class="bg-gray-100 min-h-screen flex items-center justify-center">
@@ -73,12 +74,16 @@ if( isset($_POST["login"]) ) {
     <!-- Login Form -->
     <div class="relative z-10 bg-white p-8 rounded-md shadow-lg">
         <h1 class="text-xl font-bold mb-4">Halaman Login</h1>
-        <?php if ( isset($error) ) {
-            ?>
-                <p style="font-style: italic; color: red; text-align: center;">Username / Password salah!</p>
-            <?php
-        }
-        ?>
+        <?php if ( isset($error) ) : ?>
+            <script>
+                Swal.fire({
+                    title: 'Kesalahan!',
+                    text: 'Username / Password Salah',
+                    icon: 'error',
+                    confirmButtonText: 'Coba Lagi'
+                });
+            </script>
+            <?php endif; ?>
         <form action="#" method="POST">
             <div class="mb-4">
                 <label class="block text-gray-700 font-bold mb-2" for="email">Username</label>
