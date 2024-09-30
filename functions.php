@@ -166,21 +166,29 @@ function cari($keyword) {
     $result = mysqli_query($conek, "SELECT username FROM user WHERE username = '$username'");
 
     if( mysqli_fetch_assoc($result) ) {
-        echo "
+        ?>
         <script>
-           alert('Username sudah terdaftar!');
+            Swal.fire({
+                icon: "error",
+                title: "Username Sudah Terdaftar",
+                text: "Gunakan username lain",
+                footer: '<a href="login.php"><strong>Klik</strong> text ini Jika Sudah Daftar</a>'
+            });
         </script>
-      ";
+      <?php
       return false;
     }
 
     // cek konfirmasi password
     if( $password !== $password2 ) {
-        echo "
+        ?>
         <script>
-           alert('Konfirmasi password tidak valid!');
+            Swal.fire({
+                icon: "warning",
+                title: "Konfirmasi Password Tidak Valid"
+            });
         </script>
-      ";
+        <?php
       return false;
     }
 

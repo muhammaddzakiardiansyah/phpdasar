@@ -52,56 +52,69 @@ if( isset($_POST["login"]) ) {
     $error = true;
 
 }
-
-
-
-
-
-
-
-
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Halaman Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <h1 align="center">Halaman Login</h1>
-    <?php if( isset($error) ) : ?>
-        <p style="font-style: italic; color: red; text-align: center;">Username / Password salah!</p>
-    <?php endif; ?>
-    <table cellpadding="10" cellspacing="0" align="center">
-        <form action="" method="post">
-            <tbody>
-                <tr>
-                    <td><label for="username">Username</label></td>
-                    <td>:</td>
-                    <td><input type="username" name="username" id="username"></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password</label></td>
-                    <td>:</td>
-                    <td><input type="password" name="password" id="password"></td>
-                </tr>
-                <tr>
-                    <td colspan="3" align="center"><input type="checkbox" name="checkbox" id="checkbox"><label for="checkbox">Remember me?</label></td>
-                </tr>
-                <tr>
-                    <td colspan="3" align="center"><button type="submit" name="login">Login</button></td>
-                </tr>
-                <tr>
-                    <td colspan="3" align="center"><a href="registrasi.php">Daftarkan akun</a></td>
-                </tr>
-            </tbody>
+<div class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img style="background-image: url('https://picsum.photos/1920/1080');" alt=""
+            class="w-full h-full object-cover filter blur-sm">
+    </div>
+
+    <!-- Login Form -->
+    <div class="relative z-10 bg-white p-8 rounded-md shadow-lg">
+        <h1 class="text-xl font-bold mb-4">Halaman Login</h1>
+        <?php if ( isset($error) ) : ?>
+            <script>
+                Swal.fire({
+                    title: 'Kesalahan!',
+                    text: 'Username / Password Salah',
+                    icon: 'error',
+                    confirmButtonText: 'Coba Lagi'
+                });
+            </script>
+            <?php endif; ?>
+        <form action="#" method="POST">
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="email">Username</label>
+                <input
+                    class="appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+                    name="username" id="" type="text" placeholder="Username">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="password">Password</label>
+                <input
+                    class="appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+                    name="password" id="password" type="password" placeholder="Password">
+            </div>
+            <div class="mb-4">
+                <label class="text-gray-700 font-bold mb-2" for="checkbox">Remember me?</label>
+                <input type="checkbox" name="checkbox" id="checkbox">
+            </div>
+            <div class="flex items-center justify-between gap-8">
+                <button
+                    class="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    name="login" type="submit">
+                    Sign In
+                </button>
+                <a class="inline-block align-baseline font-bold text-sm text-cyan-500 hover:text-cyan-800"
+                    href="registrasi.php">
+                    Don't Have Account?
+                </a>
+            </div>
         </form>
-    </table>
+    </div>
+</div>    
 </body>
 </html>
+
